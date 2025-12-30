@@ -1,0 +1,375 @@
+import { useRef } from 'react';
+import Slider from 'react-slick';
+import { FaQuoteRight, FaStar, FaCheck, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
+
+// Import partner logos (make sure these are in your assets folder)
+// import serusuiLogo from '../assets/logos/serusui.png';
+// import illuminasLogo from '../assets/logos/illuminas.png';
+// import takeshopeLogo from '../assets/logos/takeshope.png';
+// import rtiLogo from '../assets/logos/rti-research.png';
+// import radiusLogo from '../assets/logos/radius.png';
+// import quantilopeLogo from '../assets/logos/quantilope.png';
+// import dynataLogo from '../assets/logos/dynata.png';
+// import kantarLogo from '../assets/logos/kantar.png';
+
+const Testimonials = () => {
+  const sliderRef = useRef(null);
+
+  // Partner logos data
+const partners = [
+  {
+    name: "Serus",
+    // logo: serusuiLogo,
+    url: "https://www.serus.com", // official Serus research platform
+  },
+  {
+    name: "Illuminas",
+    // logo: illuminasLogo,
+    url: "https://www.illuminas.com",
+  },
+  {
+    name: "TakeScope",
+    // logo: takeshopeLogo,
+    url: "https://www.takescope.com",
+  },
+  {
+    name: "RTi Research",
+    // logo: rtiLogo,
+    url: "https://www.rtiresearch.com",
+  },
+  {
+    name: "Radius",
+    // logo: radiusLogo,
+    url: "https://www.radiusglobal.com",
+  },
+  {
+    name: "Quantilope",
+    // logo: quantilopeLogo,
+    url: "https://www.quantilope.com",
+  },
+  {
+    name: "Dynata",
+    // logo: dynataLogo,
+    url: "https://www.dynata.com",
+  },
+  {
+    name: "Kantar",
+    // logo: kantarLogo,
+    url: "https://www.kantar.com",
+  },
+];
+
+
+  // Testimonial data
+  const testimonials = [
+    {
+      name: "Senior Analyst",
+      position: "Research Services",
+      company: "Global Market Research Firm",
+      rating: 5,
+      content: "Working with QuantifyAI has been an incredibly smooth process as each member of the team goes above and beyond to help make our projects successful. They have been instrumental in helping us reach tricky demographics that others would struggle to obtain and are proactive in taking steps to limit the number of fraudulent survey takers in their panels!",
+      verified: true,
+    },
+    {
+      name: "Director of Insights",
+      position: "Consumer Research",
+      company: "Fortune 500 Retail Company",
+      rating: 5,
+      content: "QuantifyAI's data quality is exceptional. Their verification process ensures we get genuine responses from hard-to-reach audiences. The turnaround time and customer service are unmatched in the industry.",
+      verified: true,
+    },
+    {
+      name: "Research Manager",
+      position: "Product Development",
+      company: "Leading Tech Company",
+      rating: 5,
+      content: "The OpinionElite panel has been a game-changer for our international studies. The global coverage and quality control measures give us confidence in our data across all markets.",
+      verified: true,
+    }
+  ];
+
+  // Slider settings for partner logos
+  const sliderSettings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 1000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
+  // Navigation handlers
+  const nextSlide = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const prevSlide = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  return (
+    <section id="testimonials" className="relative z-10 py-20 bg-gradient-to-b from-gray-900 to-black">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-semibold text-blue-400 bg-blue-400/10 px-4 py-2 rounded-full">
+              TRUSTED PARTNERS
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Client <span className="gradient-text">Testimonials</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            See what industry leaders say about working with QuantifyAI
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto">
+          {/* Partner Logos Carousel */}
+          <div className="mb-20">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-2xl font-bold text-white">
+                Trusted By Industry Leaders
+              </h3>
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevSlide}
+                  className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 group"
+                  aria-label="Previous logos"
+                >
+                  <FaChevronLeft className="group-hover:-translate-x-1 transition-transform" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 group"
+                  aria-label="Next logos"
+                >
+                  <FaChevronRight className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
+              
+              <Slider ref={sliderRef} {...sliderSettings} className="partner-slider">
+                {partners.map((partner, index) => (
+                  <div key={partner.name} className="px-3 py-16">
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <div className="glass-card p-6  rounded-2xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+                        {/* Gradient border effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-teal-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        
+                        {/* Logo container */}
+                        <div className="relative z-10 flex flex-col items-center">
+                          <div className="w-22  flex items-center justify-center">
+                            {partner.logo ? (
+                              <img
+                                src={partner.url}
+                                alt={`${partner.name} logo`}
+                                className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <span className="text-2xl font-bold gradient-text">
+                                {/* {partner.name} */}
+                              </span>
+                            )}
+                          </div>
+                          
+                          <div className="text-center">
+                            <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
+                              {partner.name}
+                            </span>
+                            {/* <div className="flex items-center justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <FiExternalLink className="text-blue-400 text-xs mr-1" />
+                              <span className="text-xs text-blue-400">Visit</span>
+                            </div> */}
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+
+          {/* Testimonial Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="group relative"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* Animated border effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-teal-400 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200" />
+                
+                <div className="relative bg-gray-900 rounded-3xl p-8 h-full">
+                  {/* Quote icon */}
+                  <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
+                    <FaQuoteRight className="text-white text-2xl" />
+                  </div>
+
+                  {/* Rating stars */}
+                  <div className="flex mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FaStar
+                        key={i}
+                        className="text-yellow-400 mr-1 text-lg group-hover:scale-110 transition-transform"
+                        style={{ transitionDelay: `${i * 50}ms` }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Testimonial content */}
+                  <p className="text-gray-300 italic leading-relaxed mb-8 group-hover:text-white transition-colors">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Client info */}
+                  <div className="flex items-center pt-6 border-t border-gray-800">
+                    <div className="relative">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center">
+                          <span className="text-white font-bold">
+                            {testimonial.name.charAt(0)}
+                          </span>
+                        </div>
+                      </div>
+                      {testimonial.verified && (
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center border-2 border-gray-900">
+                          <FaCheck className="text-white text-xs" />
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="ml-4">
+                      <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-400 text-sm">{testimonial.position}</p>
+                      <p className="text-gray-500 text-xs">{testimonial.company}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats Section */}
+          <div className="mt-20 pt-12 border-t border-gray-800">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">98%</div>
+                <p className="text-gray-400">Client Satisfaction</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">500+</div>
+                <p className="text-gray-400">Projects Completed</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">48</div>
+                <p className="text-gray-400">Global Markets</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">24h</div>
+                <p className="text-gray-400">Avg. Response Time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Custom Styles */}
+      <style jsx global>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-slide-in {
+          animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .gradient-text {
+          background: linear-gradient(90deg, #3B82F6, #06B6D4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .glass-card {
+          background: rgba(30, 41, 59, 0.5);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-bg {
+          background: linear-gradient(135deg, #3B82F6, #06B6D4);
+        }
+
+        .partner-slider .slick-slide {
+          padding: 0 8px;
+        }
+
+        .partner-slider .slick-track {
+          display: flex !important;
+          align-items: center;
+        }
+
+        .partner-slider .slick-slide > div {
+          margin: 0 4px;
+        }
+
+        /* Custom scrollbar for slider track */
+        .partner-slider::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default Testimonials;
