@@ -1,4 +1,5 @@
 import { FaGlobeAmericas, FaCheck, FaFacebookF, FaRobot, FaChartLine, FaArrowRight } from 'react-icons/fa';
+import { FaLinkedin, FaLinkedinIn } from 'react-icons/fa6';
 
 const Services = () => {
   const features = [
@@ -9,7 +10,7 @@ const Services = () => {
 
   const qualitySteps = [
     {
-      icon: <FaFacebookF />,
+      icon: <FaLinkedinIn />,
       title: 'Facebook + LinkedIn Verification',
       description: 'Recruitment and verification through social platforms for authentic respondents with profile validation.',
       color: 'bg-green-400'
@@ -113,9 +114,9 @@ const Services = () => {
                     <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center shadow-xl mr-6">
                       <span className="text-white text-2xl">{step.icon}</span>
                     </div>
-                    <div className="absolute -bottom-2  w-8 h-8 rounded-full bg-gray-900 border-4 border-gray-900 flex items-center justify-center">
+                    {/* <div className="absolute -bottom-2  w-8 h-8 rounded-full bg-gray-900 border-4 border-gray-900 flex items-center justify-center">
                       <div className={`w-4 h-4 rounded-full ${step.color}`}></div>
-                    </div>
+                    </div> */}
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2">

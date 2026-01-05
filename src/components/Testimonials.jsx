@@ -165,7 +165,7 @@ const mobileSliderSettings = {
 
         <div className="max-w-7xl mx-auto">
           {/* Partner Logos Carousel */}
-          <div className="mb-20">
+          {/* <div className="mb-20">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-white">
                 Trusted By Industry Leaders
@@ -192,7 +192,6 @@ const mobileSliderSettings = {
               <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
 
-            {/* DESKTOP SLIDER */}
 <div className="hidden md:block">
   <Slider ref={sliderRef} {...desktopSliderSettings}>
     {partners.map((partner) => (
@@ -212,7 +211,6 @@ const mobileSliderSettings = {
     ))}
   </Slider>
 </div>
-{/* MOBILE SLIDER */}
 <div className="block md:hidden">
   <Slider {...mobileSliderSettings}>
     {partners.map((partner) => (
@@ -234,7 +232,7 @@ const mobileSliderSettings = {
 </div>
 
             </div>
-          </div>
+          </div> */}
 
           {/* Testimonial Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

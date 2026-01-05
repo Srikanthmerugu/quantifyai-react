@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import WorldBranchesMap from './components/WorldBranchesMap'
+import ComapnyCorosels from './components/ComapnyCorosels'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <ComapnyCorosels />
         <Mission />
         <Services />
         {/* <WorldBranchesMap /> */}

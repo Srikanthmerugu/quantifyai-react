@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { GiPlatform } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import HeroImg from "../assets/HeroImg2.jpg"
 
 const Hero = () => {
   const canvasRef = useRef(null);
@@ -123,10 +124,10 @@ const Hero = () => {
           {/* Left Content */}
           <div className="animate-slide-in-left">
             {/* Badge */}
-            <div className="inline-flex items-center px-5 py-3 rounded-full glass-card mb-8 backdrop-blur-sm">
-              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 mr-3 animate-pulse-glow"></div>
-              <span className="text-sm font-semibold gradient-text">
-                QUANTITY/AI RESEARCH SERVICES
+            <div className="inline-flex items-center px-5 py-3 rounded-full glass-card mb-8 backdrop-blur-sm ">
+              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 mr-3  animate-pulse-glow"></div>
+              <span className="text-sm uppercase font-semibold gradient-text animate-gradient-flow">
+                Quantitative research services
               </span>
             </div>
 
@@ -189,122 +190,98 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Animated Dashboard */}
-          <div className="relative animate-slide-in-right w-full">
-            {/* Main Dashboard Card */}
-            <div className="gradient-border p-1 rounded-3xl shadow-2xl">
-              <div className="bg-gray-900 rounded-3xl p-5 sm:p-6 md:p-8 overflow-hidden relative">
-                {/* Dashboard Header */}
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6 md:mb-8">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl gradient-bg flex items-center justify-center shadow-xl">
-                      <FaChartLine className="text-white text-xl md:text-2xl" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white">
-                        Opinion Elite
-                      </h3>
-                      <p className="text-gray-400 text-xs md:text-sm">
-                        AI-Verified Dashboard
-                      </p>
-                    </div>
-                  </div>
+        {/* Right Content - Insight Visual */}
+<div className="relative animate-slide-in-right w-full">
+  {/* Main Card */}
+  <div className="gradient-border p-1 rounded-3xl shadow-2xl">
+    <div className="bg-gray-900 rounded-3xl p-6 md:p-8 overflow-hidden relative">
 
-                  <div className="text-left sm:text-right">
-                    <div className="text-xs md:text-sm text-gray-300">
-                      09:41
-                    </div>
-                    <div className="inline-flex items-center text-green-400 text-xs">
-                      <div className="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse-glow"></div>
-                      Live Data Stream
-                    </div>
-                  </div>
-                </div>
-
-                {/* Animated Chart */}
-                <div className="relative h-40 sm:h-44 md:h-48 mb-6 md:mb-8">
-                  <canvas ref={canvasRef} className="w-full h-full" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center animate-bounce">
-                      <div className="text-2xl md:text-3xl font-bold gradient-text">
-                        +4.1%
-                      </div>
-                      <div className="text-gray-400 text-xs md:text-sm">
-                        Alpha Opportunities
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Data Points */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                  <div className="glass-card p-4 rounded-2xl">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-400 text-xs md:text-sm">
-                        Response Rate
-                      </span>
-                      <span className="text-green-400 font-bold text-sm md:text-base">
-                        94%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full gradient-bg rounded-full animate-shimmer"
-                        style={{ width: "94%" }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="glass-card p-4 rounded-2xl">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-400 text-xs md:text-sm">
-                        Data Quality
-                      </span>
-                      <span className="text-blue-400 font-bold text-sm md:text-base">
-                        98%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full gradient-bg rounded-full animate-shimmer"
-                        style={{ width: "98%" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <Link
-                  to="/contact"
-                  className="block w-full mt-6 md:mt-8 px-6 sm:px-8 md:px-10 py-3 md:py-4
-                   rounded-xl gradient-bg text-white text-sm md:text-base
-                   font-semibold shadow-xl hover:shadow-2xl hover:scale-105
-                   transition-all duration-300 glow-effect text-center"
-                >
-                  <FaInfoCircle className="inline mr-2" />
-                  REQUEST INFO
-                </Link>
-              </div>
-            </div>
-
-            {/* Floating Cards (Tablet + Desktop only) */}
-            <div
-              className="absolute hidden md:block -top-4 -right-6 w-64 lg:w-72
-                  glass-card p-5 lg:p-6 rounded-2xl shadow-2xl animate-float"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="font-bold text-white text-sm lg:text-base">
-                  Global Insights
-                </h4>
-                <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 animate-pulse-glow"></div>
-              </div>
-              <p className="text-gray-400 text-xs lg:text-sm mb-4">
-                Real-time data from 48 markets
-              </p>
-              <div className="text-2xl lg:text-3xl font-bold gradient-text">
-                1.2GB/s
-              </div>
-            </div>
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center space-x-4">
+          <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center shadow-xl">
+            <FaChartLine className="text-white text-2xl" />
           </div>
+          <div>
+            <h3 className="text-2xl font-bold text-white">
+              Insight Engine
+            </h3>
+            <p className="text-gray-400 text-sm">
+              AI-Verified Intelligence
+            </p>
+          </div>
+        </div>
+
+        <div className="text-right">
+          <div className="text-sm text-gray-300">Live</div>
+          <div className="inline-flex items-center text-green-400 text-xs">
+            <div className="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse-glow" />
+            Real-time Signals
+          </div>
+        </div>
+      </div>
+
+      {/* Image Visual */}
+      <div className="relative h-64 md:h-72 mb-8 flex items-center justify-center">
+        <img
+          // src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1400&auto=format&fit=crop"
+          src={HeroImg}
+          alt="Data insights visualization"
+          className="w-full h-full object-cover rounded-2xl shadow-xl"
+        />
+
+        {/* Overlay Metric */}
+        <div className="absolute bottom-1 right-0 glass-card px-5 py-4 rounded-xl">
+          <div className="text-3xl font-bold gradient-text">
+            +4.1%
+          </div>
+          <div className="text-gray-400 text-xs">
+            Insight Accuracy
+          </div>
+        </div>
+      </div>
+
+      {/* KPI Cards */}
+      {/* <div className="grid grid-cols-2 gap-5">
+        <div className="glass-card p-4 rounded-2xl">
+          <p className="text-gray-400 text-sm mb-1">Coverage</p>
+          <p className="text-2xl font-bold gradient-text">48 Markets</p>
+        </div>
+
+        <div className="glass-card p-4 rounded-2xl">
+          <p className="text-gray-400 text-sm mb-1">Data Quality</p>
+          <p className="text-2xl font-bold gradient-text">99%</p>
+        </div>
+      </div> */}
+
+      {/* CTA */}
+      <Link
+        to="/contact"
+        className="block w-full mt-8 py-4 rounded-xl gradient-bg text-white
+                   font-semibold text-center shadow-xl hover:scale-105
+                   transition-all duration-300"
+      >
+        <FaInfoCircle className="inline mr-2" />
+        REQUEST INFO
+      </Link>
+    </div>
+  </div>
+
+  {/* Floating Card */}
+  <div className="absolute hidden md:block -top-0 right-0 w-62
+                  glass-card p-2 rounded-2xl shadow-2xl animate-float">
+    <h4 className="font-bold text-white mb-2">
+      Global Intelligence
+    </h4>
+    <p className="text-gray-400 text-sm mb-3">
+      Real-time insights across regions
+    </p>
+    <div className="text-3xl font-bold gradient-text">
+      1.2M+
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

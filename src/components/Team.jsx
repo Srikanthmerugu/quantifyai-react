@@ -7,6 +7,7 @@ import adamProfile from '../assets/profile/Adam.jpg';
 import mikeProfile from '../assets/profile/Mike.jpg';
 import rajeshProfile from '../assets/profile/Rajesh.png';
 import danielProfile from '../assets/profile/Daniel.jpg';
+import JakePryszlak from '../assets/profile/JakePryszlak.png';
 
 const Team = () => {
   const teamMembers = [
@@ -18,7 +19,7 @@ const Team = () => {
       description:
         "Visionary leader driving QuantifyAI's mission to redefine data quality standards globally.",
       profileImage: adamProfile,
-      linkedin: 'https://linkedin.com/in/adam-stephenson',
+      linkedin: 'linkedin.com/in/adamrobertstephenson',
       email: 'adam@quantifyai.com',
     },
     {
@@ -29,7 +30,7 @@ const Team = () => {
       description:
         'Research methodology expert with 15+ years in quantitative analytics and panel management.',
       profileImage: mikeProfile,
-      linkedin: 'https://linkedin.com/in/mike-kates',
+      linkedin: 'linkedin.com/in/mikekates',
       email: 'mike@quantifyai.com',
     },
     {
@@ -40,7 +41,7 @@ const Team = () => {
       description:
         'Operational excellence specialist ensuring seamless global research delivery.',
       profileImage: rajeshProfile,
-      linkedin: 'https://linkedin.com/in/rajesh-dechineny',
+      linkedin: 'linkedin.com/in/rajesh-dechineni-a8415b37',
       email: 'rajesh@quantifyai.com',
     },
     {
@@ -51,15 +52,26 @@ const Team = () => {
       description:
         'Building global alliances and expanding market reach across 48 countries.',
       profileImage: danielProfile,
-      linkedin: 'https://linkedin.com/in/daniel-stephenson',
+      linkedin: 'linkedin.com/in/daniel-stephenson-4b1747ba',
       email: 'daniel@quantifyai.com',
+    },
+    {
+      id: 4,
+      initials: 'JP',
+      name: 'Jake Pryszlak',
+      role: 'VP Sales',
+      description:
+        'Helping market researchers prove ROI, defend budgets & influence decisions | Building ResearchGeek in public (ask me anything)',
+      profileImage: JakePryszlak,
+      linkedin: 'https://www.linkedin.com/in/jacobpryszlak/',
+      email: 'Jake@quantifyai.com',
     },
   ];
 
   const TeamMemberCard = ({ member }) => (
     <div
       tabIndex={0}
-      className="relative w-72 h-80 sm:w-80 sm:h-80 rounded-[32px] p-[3px]
+      className="relative sm:w-80 sm:h-80 rounded-[32px] p-[3px]
                  group focus:outline-none
                  bg-gradient-to-br from-blue-500/10 to-teal-400/10
                  shadow-[0_70px_30px_-50px_rgba(0,102,255,0.19)]
@@ -107,10 +119,10 @@ const Team = () => {
                    group-hover:top-[20%]
                    group-active:top-[20%]
                    group-focus-within:top-[20%]
-                   group-hover:rounded-[80px_29px_29px_29px]"
+                  //  group-hover:rounded-[80px_29px_29px_29px]"
       >
         <div className="absolute inset-x-6 bottom-0 h-40 flex flex-col justify-end">
-          <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+          <h3 className="text-xl font-bold text-white">{member.name}</h3>
           <p className="text-blue-100 font-semibold mb-2">{member.role}</p>
           <p className="text-white text-sm opacity-90 mb-4">
             {member.description}
@@ -128,7 +140,7 @@ const Team = () => {
 
             <span
               className="bg-gradient-to-r from-teal-100 to-blue-100
-                         text-blue-600 text-xs font-bold px-4 py-2 rounded-full"
+                         text-blue-600 text-xs font-bold px-2 py-2 rounded-full"
             >
               {member.role}
             </span>
@@ -139,8 +151,8 @@ const Team = () => {
   );
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-      <div className="container mx-auto px-4">
+    <section className="py-10 bg-gradient-to-b from-gray-900 to-black">
+      <div className="containe mx-auto px-4">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-blue-400 bg-blue-400/10 px-4 py-2 rounded-full">
             LEADERSHIP
@@ -156,7 +168,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-">
           {teamMembers.map((member) => (
             <div key={member.id} className="flex justify-center">
               <TeamMemberCard member={member} />
