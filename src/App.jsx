@@ -17,6 +17,9 @@ import OurApproachPage from './Pages/OurApproachPage';
 import Platform from './Pages/Platform';
 import Solutions from './Pages/Solutions';
 import Company from './Pages/Company.JSX';
+import DataTable from './Pages/DataTable.JSX';
+import TermsOfUse from './Pages/TermsOfUse';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 
 
 function App() {
@@ -91,6 +94,11 @@ function App() {
             <Route path="/platform" element={<Platform />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/company" element={<Company />} />
+            <Route path="/data-table" element={<DataTable />} />
+            <Route path="/terms" element={<TermsOfUse />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+
       </Routes>
       <Footer />
     </BrowserRouter>

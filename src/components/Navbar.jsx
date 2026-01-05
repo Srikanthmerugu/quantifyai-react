@@ -15,6 +15,7 @@ import {
 import { Link, useNavigate, useLocation } from "react-router-dom";
 // import logo from "./../assets/QuantifyLogo.png";
 import logo from "./../assets/logo4.png";
+import { BiLineChart } from "react-icons/bi";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,6 +58,7 @@ const Navbar = () => {
     { label: "Solutions", path: "/solutions", icon: <MdPeople /> },
     { label: "Our Approach", path: "/approach", icon: <MdGroup /> },
     { label: "Company", path: "/company", icon: <MdGroup /> },
+    { label: "Country Net rep", path: "/data-table", icon: <BiLineChart  /> },
   ];
 
   const servicesItems = [
@@ -118,7 +120,7 @@ const Navbar = () => {
                 <div
                   ref={dropdownRef}
                   onMouseLeave={() => setDesktopServices(false)}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 rounded-2xl bg-gradient-to-r from-blue-500/80 to-blue-950 backdrop-blur  border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 rounded-2xl bg-gradient-to-r from-blue-950 to-blue-950 backdrop-blur  border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
                 >
                   <div className="p-4 space-y-2">
                     {servicesItems.map((s) => (

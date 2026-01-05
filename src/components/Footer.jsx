@@ -1,92 +1,122 @@
 // components/Footer.jsx
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiFacebook, 
-  FiTwitter, 
-  FiLinkedin, 
-  FiInstagram, 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiFacebook,
+  FiTwitter,
+  FiLinkedin,
+  FiInstagram,
   FiSend,
   FiChevronRight,
-  FiArrowUpRight
-} from 'react-icons/fi';
-import { MdOutlineVerifiedUser } from 'react-icons/md';
+  FiArrowUpRight,
+} from "react-icons/fi";
+import { MdOutlineVerifiedUser } from "react-icons/md";
+import logo from "./../assets/logo4.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (email) {
       // Add your subscription logic here
-      console.log('Subscribed with email:', email);
+      console.log("Subscribed with email:", email);
       setSubscribed(true);
-      setEmail('');
-      
+      setEmail("");
+
       // Reset after 3 seconds
       setTimeout(() => setSubscribed(false), 3000);
     }
   };
 
   const services = [
-    { name: 'Questionnaire Development', path: '/services/questionnaire-development' },
-    { name: 'Survey Programming', path: '/services/survey-programming' },
-    { name: 'Fielding & Data Collection', path: '/services/fielding-data-collection' },
-    { name: 'Data Processing & Analysis', path: '/services/data-analysis' },
+    {
+      name: "Questionnaire Development",
+      path: "/services/questionnaire-development",
+    },
+    { name: "Survey Programming", path: "/services/survey-programming" },
+    {
+      name: "Fielding & Data Collection",
+      path: "/services/fielding-data-collection",
+    },
+    { name: "Data Processing & Analysis", path: "/services/data-analysis" },
   ];
 
   const quickLinks = [
-    { name: 'Platform', path: '/platform' },
-    { name: 'Solutions', path: '/solutions' },
-    { name: 'Our Approach', path: '/approach' },
-    { name: 'Company', path: '/company' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Platform", path: "/platform" },
+    { name: "Solutions", path: "/solutions" },
+    { name: "Our Approach", path: "/approach" },
+    { name: "Company", path: "/company" },
+    { name: "Contact", path: "/contact" },
     // { name: 'Careers', path: '/careers' },
     // { name: 'Blog', path: '/blog' },
     // { name: 'Resources', path: '/resources' },
   ];
 
   const socialLinks = [
-    { icon: <FiLinkedin />, href: 'https://linkedin.com/company/quantifyai', label: 'LinkedIn' },
-    { icon: <FiTwitter />, href: 'https://twitter.com/quantifyai', label: 'Twitter' },
-    { icon: <FiFacebook />, href: 'https://facebook.com/quantifyai', label: 'Facebook' },
-    { icon: <FiInstagram />, href: 'https://instagram.com/quantifyai', label: 'Instagram' },
+    {
+      icon: <FiLinkedin />,
+      href: "https://linkedin.com/company/quantifyai",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FiTwitter />,
+      href: "https://twitter.com/quantifyai",
+      label: "Twitter",
+    },
+    {
+      icon: <FiFacebook />,
+      href: "https://facebook.com/quantifyai",
+      label: "Facebook",
+    },
+    {
+      icon: <FiInstagram />,
+      href: "https://instagram.com/quantifyai",
+      label: "Instagram",
+    },
   ];
 
   const contactInfo = [
-    { icon: <FiMail />, text: 'info@quantifyai.com', href: 'mailto:info@quantifyai.com' },
-    { icon: <FiPhone />, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: <FiMapPin />, text: '123 Research Ave, San Francisco, CA 94107', href: 'https://maps.google.com' },
+    {
+      icon: <FiMail />,
+      text: "rfq@quantifyai.co",
+      href: "mailto:rfq@quantifyai.co",
+    },
+    { icon: <FiPhone />, text: "+1 858-692-1325", href: "tel:+1 8586921325" },
+    {
+      icon: <FiMapPin />,
+      text: "      QuantifyAI, LLC 3200 Paseo Village Way #2337 San Diego, CA 92130 USA",
+
+      href: "https://maps.google.com",
+    },
   ];
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8">
-      <div className="container mx-auto px-12">
+      <div className="container mx-auto px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           {/* Left Column - Brand & Newsletter */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                QuantifyAI
-              </div>
+              <img src={logo} className="w-40" />
+
               {/* <div className="ml-3 flex items-center text-xs bg-gradient-to-r from-blue-500 to-teal-500 text-white px-2 py-1 rounded-full">
                 <MdOutlineVerifiedUser className="mr-1" />
                 Verified Partner
               </div> */}
             </div>
-            
+
             <p className="text-gray-400 mb-8 max-w-sm">
-              We're redefining industry standards with an intense focus on data quality through our proprietary 
-              OpinionElite panel and AI-powered analytics solutions.
+              We're redefining industry standards with an intense focus on data
+              quality through our proprietary OpinionElite panel and AI-powered
+              analytics solutions.
             </p>
-            
-        
 
             {/* Social Links */}
             <div>
@@ -202,50 +232,46 @@ const Footer = () => {
         <div className="border-t border-gray-800 my-8"></div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-500 text-sm mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Left */}
+          <div className="text-gray-500 text-sm">
             © {currentYear} QuantifyAI. All rights reserved.
           </div>
-          
-          {/* <div className="flex flex-wrap gap-6 text-sm">
-            <Link to="/privacy" className="text-gray-500 hover:text-white transition-colors">
+
+          {/* Center - Legal Links */}
+          <div className="flex flex-wrap gap-6 text-sm">
+            <Link
+              to="/privacy-policy"
+              className="text-gray-500 hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-500 hover:text-white transition-colors">
+            <Link
+              to="/terms"
+              className="text-gray-500 hover:text-white transition-colors"
+            >
               Terms of Service
             </Link>
-            <Link to="/cookies" className="text-gray-500 hover:text-white transition-colors">
-              Cookie Policy
-            </Link>
-            <Link to="/security" className="text-gray-500 hover:text-white transition-colors">
-              Security
-            </Link>
-            <Link to="/sitemap" className="text-gray-500 hover:text-white transition-colors">
-              Sitemap
-            </Link>
-          </div> */}
-
-
-           {/* Trust Badges */}
-        <div className="flex flex-wrap justify-center items-center gap-6 ">
-          <div className="flex items-center text-gray-400 text-sm">
-            <MdOutlineVerifiedUser className="mr-2 text-green-400" />
-            ISO 27001 Certified
           </div>
-          <div className="hidden md:block text-gray-500">•</div>
-          <div className="flex items-center text-gray-400 text-sm">
-            <MdOutlineVerifiedUser className="mr-2 text-green-400" />
-            GDPR Compliant
-          </div>
-          <div className="hidden md:block text-gray-500">•</div>
-          <div className="flex items-center text-gray-400 text-sm">
-            <MdOutlineVerifiedUser className="mr-2 text-green-400" />
-            SOC 2 Type II
+
+          {/* Right - Trust Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <div className="flex items-center text-gray-400 text-sm">
+              <MdOutlineVerifiedUser className="mr-2 text-green-400" />
+              ISO 27001 Certified
+            </div>
+            <div className="hidden md:block text-gray-500">•</div>
+            <div className="flex items-center text-gray-400 text-sm">
+              <MdOutlineVerifiedUser className="mr-2 text-green-400" />
+              GDPR Compliant
+            </div>
+            <div className="hidden md:block text-gray-500">•</div>
+            <div className="flex items-center text-gray-400 text-sm">
+              <MdOutlineVerifiedUser className="mr-2 text-green-400" />
+              SOC 2 Type II
+            </div>
           </div>
         </div>
-        </div>
-
-       
       </div>
 
       {/* Custom Animations */}

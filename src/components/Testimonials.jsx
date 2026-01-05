@@ -1,65 +1,71 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import { FaQuoteRight, FaStar, FaCheck, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi';
+import { useRef } from "react";
+import Slider from "react-slick";
+import {
+  FaQuoteRight,
+  FaStar,
+  FaCheck,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Import partner logos (make sure these are in your assets folder)
-// import serusuiLogo from '../assets/logos/serusui.png';
-// import illuminasLogo from '../assets/logos/illuminas.png';
-// import takeshopeLogo from '../assets/logos/takeshope.png';
-// import rtiLogo from '../assets/logos/rti-research.png';
-// import radiusLogo from '../assets/logos/radius.png';
-// import quantilopeLogo from '../assets/logos/quantilope.png';
-// import dynataLogo from '../assets/logos/dynata.png';
-// import kantarLogo from '../assets/logos/kantar.png';
+
+import serusuiLogo from "../assets/companys/svg-image-3.png";
+import illuminasLogo from "../assets/companys/svg-image-4.png";
+import takeshopeLogo from "../assets/companys/svg-image-5.png";
+import rtiLogo from "../assets/companys/svg-image-6.png";
+import radiusLogo from "../assets/companys/svg-image-8.png";
+import quantilopeLogo from "../assets/companys/svg-image-9.png";
+import dynataLogo from "../assets/companys/svg-image-10.png";
 
 const Testimonials = () => {
   const sliderRef = useRef(null);
 
   // Partner logos data
-const partners = [
-  {
-    name: "Serus",
-    // logo: serusuiLogo,
-    url: "https://www.serus.com", // official Serus research platform
-  },
-  {
-    name: "Illuminas",
-    // logo: illuminasLogo,
-    url: "https://www.illuminas.com",
-  },
-  {
-    name: "TakeScope",
-    // logo: takeshopeLogo,
-    url: "https://www.takescope.com",
-  },
-  {
-    name: "RTi Research",
-    // logo: rtiLogo,
-    url: "https://www.rtiresearch.com",
-  },
-  {
-    name: "Radius",
-    // logo: radiusLogo,
-    url: "https://www.radiusglobal.com",
-  },
-  {
-    name: "Quantilope",
-    // logo: quantilopeLogo,
-    url: "https://www.quantilope.com",
-  },
-  {
-    name: "Dynata",
-    // logo: dynataLogo,
-    url: "https://www.dynata.com",
-  },
-  {
-    name: "Kantar",
-    // logo: kantarLogo,
-    url: "https://www.kantar.com",
-  },
-];
-
+  const partners = [
+    {
+      name: "Serus",
+      logo: serusuiLogo,
+      url: "https://www.serus.com", // official Serus research platform
+    },
+    {
+      name: "Illuminas",
+      logo: illuminasLogo,
+      url: "https://www.illuminas.com",
+    },
+    {
+      name: "TakeScope",
+      logo: takeshopeLogo,
+      url: "https://www.takescope.com",
+    },
+    {
+      name: "RTi Research",
+      logo: rtiLogo,
+      url: "https://www.rtiresearch.com",
+    },
+    {
+      name: "Radius",
+      logo: radiusLogo,
+      url: "https://www.radiusglobal.com",
+    },
+    {
+      name: "Quantilope",
+      logo: quantilopeLogo,
+      url: "https://www.quantilope.com",
+    },
+    {
+      name: "Dynata",
+      logo: dynataLogo,
+      url: "https://www.dynata.com",
+    },
+    // {
+    //   name: "Kantar",
+    //   // logo: kantarLogo,
+    //   url: "https://www.kantar.com",
+    // },
+  ];
 
   // Testimonial data
   const testimonials = [
@@ -68,7 +74,8 @@ const partners = [
       position: "Research Services",
       company: "Global Market Research Firm",
       rating: 5,
-      content: "Working with QuantifyAI has been an incredibly smooth process as each member of the team goes above and beyond to help make our projects successful. They have been instrumental in helping us reach tricky demographics that others would struggle to obtain and are proactive in taking steps to limit the number of fraudulent survey takers in their panels!",
+      content:
+        "Working with QuantifyAI has been an incredibly smooth process as each member of the team goes above and beyond to help make our projects successful. They have been instrumental in helping us reach tricky demographics that others would struggle to obtain and are proactive in taking steps to limit the number of fraudulent survey takers in their panels!",
       verified: true,
     },
     {
@@ -76,7 +83,8 @@ const partners = [
       position: "Consumer Research",
       company: "Fortune 500 Retail Company",
       rating: 5,
-      content: "QuantifyAI's data quality is exceptional. Their verification process ensures we get genuine responses from hard-to-reach audiences. The turnaround time and customer service are unmatched in the industry.",
+      content:
+        "QuantifyAI's data quality is exceptional. Their verification process ensures we get genuine responses from hard-to-reach audiences. The turnaround time and customer service are unmatched in the industry.",
       verified: true,
     },
     {
@@ -84,46 +92,46 @@ const partners = [
       position: "Product Development",
       company: "Leading Tech Company",
       rating: 5,
-      content: "The OpinionElite panel has been a game-changer for our international studies. The global coverage and quality control measures give us confidence in our data across all markets.",
+      content:
+        "The OpinionElite panel has been a game-changer for our international studies. The global coverage and quality control measures give us confidence in our data across all markets.",
       verified: true,
-    }
+    },
   ];
 
   // Slider settings for partner logos
-  const sliderSettings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 1000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
+const desktopSliderSettings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  speed: 800,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  pauseOnHover: true,
+
+  responsive: [
+    { breakpoint: 1280, settings: { slidesToShow: 4 } },
+    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+    { breakpoint: 768, settings: { slidesToShow: 2 } },
+  ],
+};
+
+
+// MOBILE SLIDER SETTINGS (1 image only)
+const mobileSliderSettings = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
+
+
 
   // Navigation handlers
   const nextSlide = () => {
@@ -135,7 +143,10 @@ const partners = [
   };
 
   return (
-    <section id="testimonials" className="relative z-10 py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section
+      id="testimonials"
+      className="relative z-10 py-20 bg-gradient-to-b from-gray-900 to-black"
+    >
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -180,52 +191,48 @@ const partners = [
             <div className="relative">
               <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
-              
-              <Slider ref={sliderRef} {...sliderSettings} className="partner-slider">
-                {partners.map((partner, index) => (
-                  <div key={partner.name} className="px-3 py-16">
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group"
-                    >
-                      <div className="glass-card p-6  rounded-2xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
-                        {/* Gradient border effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-teal-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
-                        {/* Logo container */}
-                        <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-22  flex items-center justify-center">
-                            {partner.logo ? (
-                              <img
-                                src={partner.url}
-                                alt={`${partner.name} logo`}
-                                className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                                loading="lazy"
-                              />
-                            ) : (
-                              <span className="text-2xl font-bold gradient-text">
-                                {/* {partner.name} */}
-                              </span>
-                            )}
-                          </div>
-                          
-                          <div className="text-center">
-                            <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
-                              {partner.name}
-                            </span>
-                            {/* <div className="flex items-center justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                              <FiExternalLink className="text-blue-400 text-xs mr-1" />
-                              <span className="text-xs text-blue-400">Visit</span>
-                            </div> */}
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                ))}
-              </Slider>
+
+            {/* DESKTOP SLIDER */}
+<div className="hidden md:block">
+  <Slider ref={sliderRef} {...desktopSliderSettings}>
+    {partners.map((partner) => (
+      <div key={partner.name} className="px-4 py-6">
+        <a href={partner.url} target="_blank" rel="noopener noreferrer">
+          <div className="glass-card rounded-xl p-4 hover:scale-105 transition">
+            <div className="flex justify-center h-24">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-20 mt-8 object-contain"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    ))}
+  </Slider>
+</div>
+{/* MOBILE SLIDER */}
+<div className="block md:hidden">
+  <Slider {...mobileSliderSettings}>
+    {partners.map((partner) => (
+      <div key={partner.name} className="px-6 py-8">
+        <a href={partner.url} target="_blank" rel="noopener noreferrer">
+          <div className="glass-card rounded-xl p-6">
+            <div className="flex justify-center h-24">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-full mt-5 object-contain mx-auto"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    ))}
+  </Slider>
+</div>
+
             </div>
           </div>
 
@@ -239,7 +246,7 @@ const partners = [
               >
                 {/* Animated border effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-teal-400 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200" />
-                
+
                 <div className="relative bg-gray-900 rounded-3xl p-8 h-full">
                   {/* Quote icon */}
                   <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
@@ -283,8 +290,12 @@ const partners = [
                       <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors">
                         {testimonial.name}
                       </h4>
-                      <p className="text-gray-400 text-sm">{testimonial.position}</p>
-                      <p className="text-gray-500 text-xs">{testimonial.company}</p>
+                      <p className="text-gray-400 text-sm">
+                        {testimonial.position}
+                      </p>
+                      <p className="text-gray-500 text-xs">
+                        {testimonial.company}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -300,7 +311,9 @@ const partners = [
                 <p className="text-gray-400">Client Satisfaction</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">500+</div>
+                <div className="text-4xl font-bold gradient-text mb-2">
+                  500+
+                </div>
                 <p className="text-gray-400">Projects Completed</p>
               </div>
               <div className="text-center">
@@ -315,59 +328,6 @@ const partners = [
           </div>
         </div>
       </div>
-
-      {/* Custom Styles */}
-      <style jsx global>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-slide-in {
-          animation: slideIn 0.6s ease-out forwards;
-        }
-
-        .gradient-text {
-          background: linear-gradient(90deg, #3B82F6, #06B6D4);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .glass-card {
-          background: rgba(30, 41, 59, 0.5);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .gradient-bg {
-          background: linear-gradient(135deg, #3B82F6, #06B6D4);
-        }
-
-        .partner-slider .slick-slide {
-          padding: 0 8px;
-        }
-
-        .partner-slider .slick-track {
-          display: flex !important;
-          align-items: center;
-        }
-
-        .partner-slider .slick-slide > div {
-          margin: 0 4px;
-        }
-
-        /* Custom scrollbar for slider track */
-        .partner-slider::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 };

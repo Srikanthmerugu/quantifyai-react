@@ -13,6 +13,7 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 import { FiSend, FiUser, FiMail, FiBriefcase, FiMessageSquare } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -41,19 +42,19 @@ const ContactPage = () => {
     {
       icon: <FaPhone />,
       title: 'Phone',
-      details: ['+1 (858) 692-1325', '+1 (800) 555-QUANT'],
+      details: ['+1 (858) 692-1325'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      details: ['RFQ@QUANTIFYAI.COM', 'SUPPORT@QUANTIFYAI.COM'],
+      details: ['RFQ@QUANTIFYAI.COM'],
       color: 'from-purple-500 to-pink-500'
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Headquarters',
-      details: ['123 Data Science Drive', 'San Diego, CA 92121'],
+      details: ['  QuantifyAI, LLC 3200 Paseo Village Way #2337 San Diego, CA 92130 USA",'],
       color: 'from-green-500 to-emerald-500'
     },
     {
@@ -411,10 +412,10 @@ const ContactPage = () => {
                 Schedule a free consultation with our experts to discuss your specific needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="px-10 py-4 rounded-xl gradient-bg text-white font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 glow-effect flex items-center justify-center space-x-3">
+                <Link to="/contact" className="px-10 py-4 rounded-xl gradient-bg text-white font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 glow-effect flex items-center justify-center space-x-3">
                   <FaPhone className="text-xl" />
-                  <span>Schedule a Call</span>
-                </button>
+                  <span>Contact US</span>
+                </Link>
                 <button className="px-10 py-4 rounded-xl glass-card text-white font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3">
                   <FaEnvelope className="text-xl" />
                   <span>Email Us Directly</span>
